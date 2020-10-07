@@ -110,6 +110,12 @@ test12      test19  test25  test31  test38  test44  test50  test57  test63  test
 
 ```
 ## Dettached EBS volume from one node1 to another node2 & attched EBS volume to EC2:
+- 1st unmount from node1 via command then secoundly unattached from console (Becouse if 1st and 2nd step keep os safe via currpt)
+```sh
+[root@node1 etc]# umount /home/ec2-user/
+```
+Then do action and dettached volume from ec2 node1 and attach it to node2 
+
 ```sh
 [root@node2 ec2-user]# fdisk -l
 Disk /dev/xvda: 8 GiB, 8589934592 bytes, 16777216 sectors
@@ -130,4 +136,21 @@ Disk /dev/xvdf: 1 GiB, 1073741824 bytes, 2097152 sectors <==== Attached volume f
 Units: sectors of 1 * 512 = 512 bytes
 Sector size (logical/physical): 512 bytes / 512 bytes
 I/O size (minimum/optimal): 512 bytes / 512 bytes
+```
+
+```sh
+[root@node2 ec2-user]# mkdir data
+
+[root@node2 ec2-user]# mount /dev/xvdf /home/ec2-user/data <==== wait few seconds
+
+[root@node2 ec2-user]# cd data
+
+[root@node2 data]# ls
+lost+found  test13  test2   test26  test32  test39  test45  test51  test58  test64  test70  test77  test83  test9   test96
+test0       test14  test20  test27  test33  test4   test46  test52  test59  test65  test71  test78  test84  test90  test97
+test1       test15  test21  test28  test34  test40  test47  test53  test6   test66  test72  test79  test85  test91  test98
+test10      test16  test22  test29  test35  test41  test48  test54  test60  test67  test73  test8   test86  test92  test99
+test100     test17  test23  test3   test36  test42  test49  test55  test61  test68  test74  test80  test87  test93
+test11      test18  test24  test30  test37  test43  test5   test56  test62  test69  test75  test81  test88  test94
+test12      test19  test25  test31  test38  test44  test50  test57  test63  test7   test76  test82  test89  test95
 ```
