@@ -137,7 +137,7 @@ Units: sectors of 1 * 512 = 512 bytes
 Sector size (logical/physical): 512 bytes / 512 bytes
 I/O size (minimum/optimal): 512 bytes / 512 bytes
 ```
-
+Create new directory and mount it and access it.
 ```sh
 [root@node2 ec2-user]# mkdir data
 
