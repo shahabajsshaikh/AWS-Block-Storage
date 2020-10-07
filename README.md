@@ -6,7 +6,7 @@
 2. EFS
 3. Temporary Storage (Instance Storage)
 
-## Create & attched EBS volume to EC2:
+## 1. Create & attched EBS volume to EC2:
 
 ```sh
 [root@node1 ec2-user]# fdisk -l
