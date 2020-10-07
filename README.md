@@ -114,7 +114,7 @@ test12      test19  test25  test31  test38  test44  test50  test57  test63  test
 ```sh
 [root@node1 etc]# umount /home/ec2-user/
 ```
-Then do action and dettached volume from ec2 node1 and attach it to node2 
+- Then do action and dettached volume from ec2 node1 and attach it to node2 
 
 ```sh
 [root@node2 ec2-user]# fdisk -l
@@ -137,7 +137,7 @@ Units: sectors of 1 * 512 = 512 bytes
 Sector size (logical/physical): 512 bytes / 512 bytes
 I/O size (minimum/optimal): 512 bytes / 512 bytes
 ```
-Create new directory and mount it and access it.
+- Create new directory and mount it and access it.
 ```sh
 [root@node2 ec2-user]# mkdir data
 
